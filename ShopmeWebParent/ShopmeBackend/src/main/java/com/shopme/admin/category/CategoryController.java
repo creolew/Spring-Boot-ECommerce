@@ -40,6 +40,8 @@ public class CategoryController {
 		return "categories/category_form";
 	}
 
+	
+	
 	@PostMapping("/categories/save")
 	public String saveCategory(Category category, @RequestParam("fileImage") MultipartFile multipartFile,
 			RedirectAttributes ra) throws IOException {
@@ -55,5 +57,10 @@ public class CategoryController {
 		ra.addFlashAttribute("message", "The category has been saved successfully.");
 		return "redirect:/categories";
 	}
+	
+	
+	
+	
+	
 	
 }
