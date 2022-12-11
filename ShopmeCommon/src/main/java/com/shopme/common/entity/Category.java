@@ -107,7 +107,11 @@ public class Category {
 		this.parent=parent;
 	}
 
-	
+	public Category(Integer id, String name, String alias) {
+		this.name = name;
+		this.id = id;
+		this.alias = alias;
+	}
 	
 	
 	
