@@ -11,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 
 import com.shopme.admin.category.CategoryRepository;
@@ -99,7 +100,7 @@ public class CategoryRepositoryTests {
 	
 	@Test
 	public void testListRootCategory() {
-		List<Category> rootCategories = repo.findRootCategory();
+		List<Category> rootCategories = repo.findRootCategories(Sort.by("name").ascending());
 		
 		rootCategories.forEach(cat -> System.out.println(cat.getName()));
 
